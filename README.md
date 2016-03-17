@@ -9,7 +9,7 @@ Dss.OnboardingApiClient is a simple .NET API client implementation wrapping much
 	var client = new OnboardingApiClient(@"https://api.321forms.com/v1",  // the API URL you'd like to use
 										 999,                             // your 321Forms Company ID
 										 "username",                      // the 321Forms user account you use for API access - create a dedicated HR Admin account
-										 "your_secret_key");              // your API secret key - find this on the "Edit Account" page for your your API user
+										 "your_secret_key");              // your API secret key - find this on the "Edit Account" page for your API user
 
 	// retrieve a list of the divisions in your company
 	var divisions = client.GetDivisions();

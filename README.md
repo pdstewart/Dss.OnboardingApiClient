@@ -16,3 +16,18 @@ Dss.OnboardingApiClient is a simple .NET API client implementation wrapping much
 
 	// retrieve the 25 most recent hires for a division
 	var recentHires = client.GetCompletedUsers(divisions[0].ID);
+
+	var user = recentHires[0];
+
+	// retrieve a list of the forms submitted by the user
+	var submittedForms = client.GetSubmittedForms(user.Username);
+
+	var form = submittedForms[0];
+
+	// get the user's responses for a given form
+	var formResponses = client.GetSubmittedFormResponses(user.Username, form.FormID);
+
+	// download and save the PDF for a submitted form
+	var formData = client.GetSubmittedFormPdf(user.Username, form.FormID);
+
+	System.IO.File.WriteAllBytes("form.pdf", formData.Pdf.FileBytes);
